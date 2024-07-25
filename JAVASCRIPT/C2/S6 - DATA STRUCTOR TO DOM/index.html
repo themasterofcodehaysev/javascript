@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="STYLE/style.css">
+</head>
+<body>
+
+    <form action="" class="form">
+        <div class="input-name">
+            <label for=""> Task:</label>
+            <input type="text" class="task-name" value="">
+        </div>
+        <div class="tag">
+            <label for="">Tag:</label>
+            <select name="select" id="select">
+                <option value="important">Important</option>
+                <option value="not-important">Not important</option>
+            </select>
+        </div>
+        <div class="div-submit">
+            <button>Add task</button>
+        </div>
+    </form>
+<script>
+    // Create task and bgcolor
+    let body = document.querySelector('body');
+    let taskName = document.getElementsByClassName('task-name');
+    let propoties = document.getElementById('select');
+    let submit = document.querySelector('button');
+
+    let tasks=[
+        {description:'task1', propoties: 1 },
+        {description:'task2', propoties: 0 },
+        {description:'task3', propoties: 1 },
+        {description:'task4', propoties: 0 },
+
+    ]
+    
+
+    
+    function addTask(e){
+        e.preventDefault();
+        let newTask = {description: taskName.value , propoties:parseInt(propoties.value) };
+        tasks.push(newTask);
+        displayTask();
+
+ 
+
+    }
+
+
+
+    function displayTask(){
+        for (let value of tasks){
+            let task = document.createElement('div')  
+            task.textContent = value.description;
+            if(value.propoties === 1){
+                task.style.background='red';
+            }
+            else{
+                task.style.background='purple';
+            }
+            body.appendChild(task);
+        }
+    }
+    displayTask();
+    // Add task from user input
+
+
+
+    
+
+</script>
+
+</body>
+</html>

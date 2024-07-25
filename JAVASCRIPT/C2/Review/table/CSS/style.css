@@ -1,0 +1,28 @@
+body{
+    margin: 0%;
+    padding: 0%;
+}
+
+.table-container{
+    margin: auto;
+    margin-top: 50px;
+    width: 80%;
+    border-collapse: collapse;
+}
+
+table, th, td{
+    border: solid 1px black;
+}
+
+.row-th th{
+    background-color: blue;
+}
+
+.row-td td{
+    text-align: center;
+    background-color: skyblue;
+}
+
+th, td{
+    padding: 10px;
+}
